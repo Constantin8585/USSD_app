@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 
-class TogocomPaiement extends StatefulWidget {
-  const TogocomPaiement({super.key});
+class sim2Paiement extends StatefulWidget {
+  const sim2Paiement({super.key});
 
   @override
-  State<TogocomPaiement> createState() => _TogocomPaiementState();
+  State<sim2Paiement> createState() => _sim2PaiementState();
 }
 
-class _TogocomPaiementState extends State<TogocomPaiement> {
+class _sim2PaiementState extends State<sim2Paiement> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Payement de facture avec Togocom "),
+        title: const Text("Payement de facture avec sim2 "),
         backgroundColor: Colors.amber,
       ),
       body: SingleChildScrollView(

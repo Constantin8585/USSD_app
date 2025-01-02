@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:fluttercontactpicker/fluttercontactpicker.dart';
 
-class MoovCredit extends StatefulWidget {
-  const MoovCredit({super.key});
+class sim1Credit extends StatefulWidget {
+  const sim1Credit({super.key});
 
   @override
-  State<MoovCredit> createState() => _MoovCreditState();
+  State<sim1Credit> createState() => _sim1CreditState();
 }
 
-class _MoovCreditState extends State<MoovCredit> {
+class _sim1CreditState extends State<sim1Credit> {
   final _formKey = GlobalKey<FormState>();
   final TextEditingController _numberController = TextEditingController();
   final TextEditingController _amountController = TextEditingController();

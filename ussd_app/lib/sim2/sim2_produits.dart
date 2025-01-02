@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:ussd_app/moov/moov_forfait_internet.dart';
-import 'package:ussd_app/moov/moov_forfait_mixte.dart';
-import 'package:ussd_app/moov/moov_forfait_voie.dart';
+import 'package:ussd_app/sim1/sim1_forfait_internet.dart';
+import 'package:ussd_app/sim1/sim1_forfait_mixte.dart';
+import 'package:ussd_app/sim1/sim1_forfait_voie.dart';
 
-class MoovProduits extends StatefulWidget {
-  const MoovProduits({super.key});
+class sim2Produits extends StatefulWidget {
+  const sim2Produits({super.key});
 
   @override
-  State<MoovProduits> createState() => _MoovForfaitsState();
+  State<sim2Produits> createState() => _sim1ForfaitsState();
 }
 
-class _MoovForfaitsState extends State<MoovProduits> {
+class _sim1ForfaitsState extends State<sim2Produits> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,7 +30,7 @@ class _MoovForfaitsState extends State<MoovProduits> {
                 onTap: () => Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => const MoovForfaitVoie()),
+                      builder: (context) => const sim1ForfaitVoie()),
                 ),
               ),
               _buildForfaitOption(
@@ -40,7 +40,7 @@ class _MoovForfaitsState extends State<MoovProduits> {
                 onTap: () => Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => const MoovForfaitVoie()),
+                      builder: (context) => const sim1ForfaitVoie()),
                 ),
               ),
               _buildForfaitOption(
@@ -50,7 +50,7 @@ class _MoovForfaitsState extends State<MoovProduits> {
                 onTap: () => Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => const MoovForfaitMixte()),
+                      builder: (context) => const sim1ForfaitMixte()),
                 ),
               ),
               _buildForfaitOption(
@@ -60,7 +60,7 @@ class _MoovForfaitsState extends State<MoovProduits> {
                 onTap: () => Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => const MoovForfaitInternet()),
+                      builder: (context) => const sim1ForfaitInternet()),
                 ),
               ),
             ],

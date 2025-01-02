@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:fluttercontactpicker/fluttercontactpicker.dart';
 
-class TogocomTransfert extends StatefulWidget {
-  const TogocomTransfert({super.key});
+class sim2Transfert extends StatefulWidget {
+  const sim2Transfert({super.key});
 
   @override
-  State<TogocomTransfert> createState() => _TogocomTransfertState();
+  State<sim2Transfert> createState() => _sim2TransfertState();
 }
 
-class _TogocomTransfertState extends State<TogocomTransfert> {
+class _sim2TransfertState extends State<sim2Transfert> {
   final _formKey = GlobalKey<FormState>();
   final TextEditingController _numberController = TextEditingController();
   final TextEditingController _amountController = TextEditingController();

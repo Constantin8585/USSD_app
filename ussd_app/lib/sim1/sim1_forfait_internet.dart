@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:fluttercontactpicker/fluttercontactpicker.dart';
 
-class MoovForfaitVoie extends StatefulWidget {
-  const MoovForfaitVoie({super.key});
+class sim1ForfaitInternet extends StatefulWidget {
+  const sim1ForfaitInternet({super.key});
 
   @override
-  State<MoovForfaitVoie> createState() => _MoovForfaitVoieState();
+  State<sim1ForfaitInternet> createState() => _sim1ForfaitVoieState();
 }
 
-class _MoovForfaitVoieState extends State<MoovForfaitVoie> {
+class _sim1ForfaitVoieState extends State<sim1ForfaitInternet> {
   final _formKey = GlobalKey<FormState>();
   final TextEditingController _numberController = TextEditingController();
   final TextEditingController _amountController = TextEditingController();
@@ -22,7 +22,7 @@ class _MoovForfaitVoieState extends State<MoovForfaitVoie> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Moov Forfaits Voie'),
+        title: const Text('sim1 Forfaits Internet'),
         backgroundColor: Colors.green,
       ),
       body: SafeArea(

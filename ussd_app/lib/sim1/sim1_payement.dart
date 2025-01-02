@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 
-class MoovPayement extends StatefulWidget {
-  const MoovPayement({super.key});
+class sim1Payement extends StatefulWidget {
+  const sim1Payement({super.key});
 
   @override
-  State<MoovPayement> createState() => _MoovPayementState();
+  State<sim1Payement> createState() => _sim1PayementState();
 }
 
-class _MoovPayementState extends State<MoovPayement> {
+class _sim1PayementState extends State<sim1Payement> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Payement de facture avec moov africa"),
+        title: const Text("Payement de facture avec sim1 africa"),
         backgroundColor: Colors.amber,
       ),
       body: SingleChildScrollView(

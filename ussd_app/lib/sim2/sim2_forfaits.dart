@@ -1,21 +1,21 @@
 import 'package:flutter/material.dart';
-import 'package:ussd_app/moov/moov_forfait_internet.dart';
-import 'package:ussd_app/moov/moov_forfait_mixte.dart';
-import 'package:ussd_app/moov/moov_forfait_voie.dart';
+import 'package:ussd_app/sim2/sim2_forfait_internet.dart';
+import 'package:ussd_app/sim2/sim2_forfait_mixte.dart';
+import 'package:ussd_app/sim2/sim2_forfait_voie.dart';
 
-class TogocomProduits extends StatefulWidget {
-  const TogocomProduits({super.key});
+class TogcomForfaits extends StatefulWidget {
+  const TogcomForfaits({super.key});
 
   @override
-  State<TogocomProduits> createState() => _MoovForfaitsState();
+  State<TogcomForfaits> createState() => _TogcomForfaitsState();
 }
 
-class _MoovForfaitsState extends State<TogocomProduits> {
+class _TogcomForfaitsState extends State<TogcomForfaits> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Veuillez choisir votre Produit"),
+        title: const Text("Veuillez choisir votre forfait"),
         backgroundColor: Colors.amber,
       ),
       body: SingleChildScrollView(
@@ -26,21 +26,11 @@ class _MoovForfaitsState extends State<TogocomProduits> {
               _buildForfaitOption(
                 context,
                 icon: Icons.phone_android_outlined,
-                text: 'Recharge de Crédit',
-                onTap: () => Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => const MoovForfaitVoie()),
-                ),
-              ),
-              _buildForfaitOption(
-                context,
-                icon: Icons.phone_android_outlined,
                 text: 'Forfait Appel (voie)',
                 onTap: () => Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => const MoovForfaitVoie()),
+                      builder: (context) => const sim2ForfaitVoie()),
                 ),
               ),
               _buildForfaitOption(
@@ -50,7 +40,7 @@ class _MoovForfaitsState extends State<TogocomProduits> {
                 onTap: () => Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => const MoovForfaitMixte()),
+                      builder: (context) => const sim2ForfaitMixte()),
                 ),
               ),
               _buildForfaitOption(
@@ -60,7 +50,7 @@ class _MoovForfaitsState extends State<TogocomProduits> {
                 onTap: () => Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => const MoovForfaitInternet()),
+                      builder: (context) => const sim2ForfaitInternet()),
                 ),
               ),
             ],

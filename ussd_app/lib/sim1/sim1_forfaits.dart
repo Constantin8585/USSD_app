@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:ussd_app/togocom/togocom_forfait_internet.dart';
-import 'package:ussd_app/togocom/togocom_forfait_mixte.dart';
-import 'package:ussd_app/togocom/togocom_forfait_voie.dart';
+import 'package:ussd_app/sim1/sim1_forfait_internet.dart';
+import 'package:ussd_app/sim1/sim1_forfait_mixte.dart';
+import 'package:ussd_app/sim1/sim1_forfait_voie.dart';
 
-class TogcomForfaits extends StatefulWidget {
-  const TogcomForfaits({super.key});
+class sim1Forfaits extends StatefulWidget {
+  const sim1Forfaits({super.key});
 
   @override
-  State<TogcomForfaits> createState() => _TogcomForfaitsState();
+  State<sim1Forfaits> createState() => _sim1ForfaitsState();
 }
 
-class _TogcomForfaitsState extends State<TogcomForfaits> {
+class _sim1ForfaitsState extends State<sim1Forfaits> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,7 +30,7 @@ class _TogcomForfaitsState extends State<TogcomForfaits> {
                 onTap: () => Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => const TogocomForfaitVoie()),
+                      builder: (context) => const sim1ForfaitVoie()),
                 ),
               ),
               _buildForfaitOption(
@@ -40,7 +40,7 @@ class _TogcomForfaitsState extends State<TogcomForfaits> {
                 onTap: () => Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => const TogocomForfaitMixte()),
+                      builder: (context) => const sim1ForfaitMixte()),
                 ),
               ),
               _buildForfaitOption(
@@ -50,7 +50,7 @@ class _TogcomForfaitsState extends State<TogcomForfaits> {
                 onTap: () => Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => const TogocomForfaitInternet()),
+                      builder: (context) => const sim1ForfaitInternet()),
                 ),
               ),
             ],

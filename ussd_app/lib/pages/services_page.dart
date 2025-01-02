@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:ussd_app/moov/moov_produit.dart';
 import 'package:ussd_app/pages/credit_page.dart';
 import 'package:ussd_app/pages/forfait_page.dart';
 import 'package:ussd_app/pages/payement_page.dart';
 import 'package:ussd_app/pages/transfert_page.dart';
-import 'package:ussd_app/togocom/togocom_produits.dart';
+import 'package:ussd_app/sim1/sim1_produit.dart';
+import 'package:ussd_app/sim2/sim2_produits.dart';
 
 class ServicesPage extends StatefulWidget {
   const ServicesPage({super.key});
@@ -74,7 +74,7 @@ class _ServicesPageState extends State<ServicesPage> {
             text: 'crédit/forfait FLOOZ',
             onTap: () => Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => const MoovProduits()),
+              MaterialPageRoute(builder: (context) => const sim1Produits()),
             ),
           ),
           _buildServiceCard(
@@ -84,7 +84,7 @@ class _ServicesPageState extends State<ServicesPage> {
             text: 'crédit/forfait TMONEY',
             onTap: () => Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => const TogocomProduits()),
+              MaterialPageRoute(builder: (context) => const sim2Produits()),
             ),
           ),
         ],

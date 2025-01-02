@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:ussd_app/moov/moov_forfaits.dart';
-import 'package:ussd_app/togocom/togcom_forfaits.dart';
+import 'package:ussd_app/sim1/sim1_forfaits.dart';
+import 'package:ussd_app/sim2/sim2_forfaits.dart';
 
 class ForfaitPage extends StatefulWidget {
   const ForfaitPage({super.key});
@@ -24,11 +24,11 @@ class _ForfaitPageState extends State<ForfaitPage> {
               onTap: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const MoovForfaits()),
+                  MaterialPageRoute(builder: (context) => const sim1Forfaits()),
                 );
               },
               child: Image.asset(
-                'assets/images/moov.png',
+                'assets/images/sim1.png',
                 width: 200,
                 height: 200,
               ),

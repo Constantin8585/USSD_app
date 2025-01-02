@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:ussd_app/moov/moov_payement.dart';
-import 'package:ussd_app/togocom/togocom_paiement.dart';
+import 'package:ussd_app/sim1/sim1_payement.dart';
+import 'package:ussd_app/sim2/sim2_paiement.dart';
 
 class PayementPage extends StatefulWidget {
   const PayementPage({super.key});
@@ -24,11 +24,11 @@ class _PayementPageState extends State<PayementPage> {
               onTap: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const MoovPayement()),
+                  MaterialPageRoute(builder: (context) => const sim1Payement()),
                 );
               },
               child: Image.asset(
-                'assets/images/moov.png',
+                'assets/images/sim1.png',
                 width: 200,
                 height: 200,
               ),
@@ -38,8 +38,7 @@ class _PayementPageState extends State<PayementPage> {
               onTap: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(
-                      builder: (context) => const TogocomPaiement()),
+                  MaterialPageRoute(builder: (context) => const sim2Paiement()),
                 );
               },
               child: Image.asset(

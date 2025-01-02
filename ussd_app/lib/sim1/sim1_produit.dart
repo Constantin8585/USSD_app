@@ -1,21 +1,21 @@
 import 'package:flutter/material.dart';
-import 'package:ussd_app/moov/moov_forfait_internet.dart';
-import 'package:ussd_app/moov/moov_forfait_mixte.dart';
-import 'package:ussd_app/moov/moov_forfait_voie.dart';
+import 'package:ussd_app/sim1/sim1_forfait_internet.dart';
+import 'package:ussd_app/sim1/sim1_forfait_mixte.dart';
+import 'package:ussd_app/sim1/sim1_forfait_voie.dart';
 
-class MoovForfaits extends StatefulWidget {
-  const MoovForfaits({super.key});
+class sim1Produits extends StatefulWidget {
+  const sim1Produits({super.key});
 
   @override
-  State<MoovForfaits> createState() => _MoovForfaitsState();
+  State<sim1Produits> createState() => _sim1ForfaitsState();
 }
 
-class _MoovForfaitsState extends State<MoovForfaits> {
+class _sim1ForfaitsState extends State<sim1Produits> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Veuillez choisir votre forfait"),
+        title: const Text("Veuillez choisir votre Produit"),
         backgroundColor: Colors.amber,
       ),
       body: SingleChildScrollView(
@@ -26,11 +26,21 @@ class _MoovForfaitsState extends State<MoovForfaits> {
               _buildForfaitOption(
                 context,
                 icon: Icons.phone_android_outlined,
+                text: 'Recharge de Crédit',
+                onTap: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const sim1ForfaitVoie()),
+                ),
+              ),
+              _buildForfaitOption(
+                context,
+                icon: Icons.phone_android_outlined,
                 text: 'Forfait Appel (voie)',
                 onTap: () => Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => const MoovForfaitVoie()),
+                      builder: (context) => const sim1ForfaitVoie()),
                 ),
               ),
               _buildForfaitOption(
@@ -40,7 +50,7 @@ class _MoovForfaitsState extends State<MoovForfaits> {
                 onTap: () => Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => const MoovForfaitMixte()),
+                      builder: (context) => const sim1ForfaitMixte()),
                 ),
               ),
               _buildForfaitOption(
@@ -50,7 +60,7 @@ class _MoovForfaitsState extends State<MoovForfaits> {
                 onTap: () => Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => const MoovForfaitInternet()),
+                      builder: (context) => const sim1ForfaitInternet()),
                 ),
               ),
             ],

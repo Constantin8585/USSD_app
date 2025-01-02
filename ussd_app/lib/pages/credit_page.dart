@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:ussd_app/moov/moov_credit.dart';
-import 'package:ussd_app/togocom/togocom_credit.dart';
+import 'package:ussd_app/sim1/sim1_credit.dart';
+import 'package:ussd_app/sim2/sim2_credit.dart';
 
 class CreditPage extends StatefulWidget {
   const CreditPage({super.key});
@@ -24,11 +24,11 @@ class _CreditPageState extends State<CreditPage> {
               onTap: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const MoovCredit()),
+                  MaterialPageRoute(builder: (context) => const sim1Credit()),
                 );
               },
               child: Image.asset(
-                'assets/images/moov.png',
+                'assets/images/sim1.png',
                 width: 200,
                 height: 200,
               ),
@@ -38,15 +38,13 @@ class _CreditPageState extends State<CreditPage> {
               onTap: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(
-                      builder: (context) => const TogocomCredit()),
+                  MaterialPageRoute(builder: (context) => const sim2Credit()),
                 );
               },
               child: Image.asset(
                 'assets/images/yas.jpeg',
                 width: 200,
                 height: 200,
-                
               ),
             )
           ],

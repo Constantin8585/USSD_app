@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ussd_app/components/bottom_nav_bar.dart';
+import 'package:ussd_app/components/settings.dart';
 import 'package:ussd_app/pages/home_page.dart';
 import 'package:ussd_app/pages/services_page.dart';
 
@@ -132,12 +133,17 @@ class _HomePageState extends State<IntroPage> {
       bottomNavigationBar: MyBottomNavBar(
         onTabChange: (index) => navigateBottomBar(index),
       ),
-      appBar: AppBar(
-          backgroundColor: Colors.transparent,
-          elevation: 1,
-          actions: [
-            IconButton(icon: const Icon(Icons.settings), onPressed: () {})
-          ]),
+      appBar:
+          AppBar(backgroundColor: Colors.transparent, elevation: 1, actions: [
+        IconButton(
+            icon: const Icon(Icons.settings),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const Settings()),
+              );
+            })
+      ]),
       body: _pages[_selectedIndex],
     );
   }

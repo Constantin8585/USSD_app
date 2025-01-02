@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:ussd_app/moov/moov_transfert.dart';
-import 'package:ussd_app/togocom/togocom_transfert.dart';
+import 'package:ussd_app/sim1/sim1_transfert.dart';
+import 'package:ussd_app/sim2/sim2_transfert.dart';
 
 class TransfertPage extends StatefulWidget {
   const TransfertPage({super.key});
@@ -25,11 +25,11 @@ class _ForfaitPageState extends State<TransfertPage> {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => const MoovTransfert()),
+                      builder: (context) => const sim1Transfert()),
                 );
               },
               child: Image.asset(
-                'assets/images/moov.png',
+                'assets/images/sim1.png',
                 width: 200,
                 height: 200,
               ),
@@ -40,7 +40,7 @@ class _ForfaitPageState extends State<TransfertPage> {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => const TogocomTransfert()),
+                      builder: (context) => const sim2Transfert()),
                 );
               },
               child: Image.asset(
