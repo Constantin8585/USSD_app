@@ -28,7 +28,7 @@ class _CreditPageState extends State<CreditPage> {
                 );
               },
               child: Image.asset(
-                'assets/images/sim1.png',
+                'assets/images/moov.png',
                 width: 200,
                 height: 200,
               ),

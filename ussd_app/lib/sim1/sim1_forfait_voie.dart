@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fluttercontactpicker/fluttercontactpicker.dart';
+import 'package:ussd_advanced/ussd_advanced.dart';
 
 class sim1ForfaitVoie extends StatefulWidget {
   const sim1ForfaitVoie({super.key});
@@ -204,11 +205,7 @@ class _sim1ForfaitVoieState extends State<sim1ForfaitVoie> {
                       ElevatedButton.icon(
                         onPressed: () {
                           if (_formKey.currentState!.validate()) {
-                            // Process the transaction here
-                            ScaffoldMessenger.of(context).showSnackBar(
-                              const SnackBar(
-                                  content: Text('Transaction confirmée')),
-                            );
+                            _sendUSSD();
                           }
                         },
                         icon: const Icon(Icons.check),
@@ -258,6 +255,29 @@ class _sim1ForfaitVoieState extends State<sim1ForfaitVoie> {
               content: Text('Erreur lors de la sélection du contact')),
         );
       }
+    }
+  }
+
+  Future<void> _sendUSSD() async {
+    try {
+      String ussdCode;
+      final amount = _amountController.text;
+
+      if (_selectedOption == 'Moi') {
+        ussdCode = '*101*1*$amount#';
+      } else {
+        final number = _numberController.text;
+        ussdCode = '*101*2*$_selectedCountryCode$number*$amount#';
+      }
+
+      await UssdAdvanced.sendUssd(
+        code: ussdCode,
+      );
+      ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(content: Text('USSD envoyé avec succès')));
+    } catch (e) {
+      ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(content: Text('Erreur lors de l\'envoi du USSD')));
     }
   }
 }

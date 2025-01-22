@@ -28,7 +28,7 @@ class _HomePageState extends State<IntroPage> {
         backgroundColor: Colors.grey,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
+                              children: [
             Column(
               children: [
                 DrawerHeader(

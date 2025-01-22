@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mobile_number/mobile_number.dart';
+import 'package:permission_handler/permission_handler.dart';
 
 class Settings extends StatefulWidget {
   const Settings({super.key});
@@ -9,29 +10,36 @@ class Settings extends StatefulWidget {
 }
 
 class _SettingsState extends State<Settings> {
-  String _sim1Number = '';
-  String _sim1Operator = '';
-  String _sim2Number = '';
-  String _sim2Operator = '';
+  String _sim1Number = 'Inconnu';
+  String _sim1Operator = 'Inconnu';
+  String _sim2Number = 'Inconnu';
+  String _sim2Operator = 'Inconnu';
 
   @override
   void initState() {
     super.initState();
-    _getSimInfo();
+    requestPermissions().then((_) => _getSimInfo());
+  }
+
+  Future<void> requestPermissions() async {
+    var status = await Permission.phone.status;
+    if (!status.isGranted) {
+      await Permission.phone.request();
+    }
   }
 
   Future<void> _getSimInfo() async {
     try {
-      if (await MobileNumber.hasPhonePermission ?? false) {
-        List<SimCard> simCards = await MobileNumber.getSimCards ?? [];
+      if (await MobileNumber.hasPhonePermission) {
+        List<SimCard>? simCards = await MobileNumber.getSimCards;
         setState(() {
-          if (simCards.isNotEmpty) {
-            _sim1Number = simCards[0].number!;
-            _sim1Operator = simCards[0].carrierName!;
+          if (simCards != null && simCards.isNotEmpty) {
+            _sim1Number = simCards[0].number ?? 'Inconnu';
+            _sim1Operator = simCards[0].carrierName ?? 'Inconnu';
           }
-          if (simCards.length > 1) {
-            _sim2Number = simCards[1].number!;
-            _sim2Operator = simCards[1].carrierName!;
+          if (simCards != null && simCards.length > 1) {
+            _sim2Number = simCards[1].number ?? 'Inconnu';
+            _sim2Operator = simCards[1].carrierName ?? 'Inconnu';
           }
         });
       }
